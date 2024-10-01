@@ -90,11 +90,14 @@ if platform == 'windows'
     # setup file alignment + enable PDB output for MSVC builds
     # PDBs are useful for Windows consumers of DXVK 
     compiler_args += [
-	  '/Z7'
-	]
+      '/Z7',
+      '/Ob3',
+      '/GL'
+    ]
     link_args += [
       '/FILEALIGN:4096',
-      '/DEBUG:FULL'
+      '/DEBUG:FULL',
+      '/LTCG'
     ]
   endif
 
